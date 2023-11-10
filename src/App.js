@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getContractNFTs } from "./utils";
 import "./App.css";
 import NftCard from "./components/NftCard";
+import ContractTrades from "./components/ContractTrades";
 
 const { Header, Content } = Layout;
 
@@ -48,6 +49,7 @@ function App() {
           <Button type="primary" onClick={handleSearch}>
             Search
           </Button>
+          <ContractTrades tokenAddress={searchText} />
         </Input.Group>
         <List
           loading={loading}

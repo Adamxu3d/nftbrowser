@@ -6,8 +6,10 @@ import { getNFTTransfers } from "../utils";
 const columns = [
   {
     title: "Transfer DateTime",
+    // datafield from the backend
     dataIndex: "block_timestamp",
     key: "block_timestamp",
+    // transform the date to a local format, the render function belongs to column (not table)
     render: (value) => {
       return new Date(value).toLocaleString();
     },
@@ -50,6 +52,7 @@ const ModalContent = ({ nft }) => {
   }
 
   return (
+    // max line per page, how many columns to show, pagination
     <Table columns={columns} dataSource={data} pagination={{ pageSize: 5 }} />
   );
 };
